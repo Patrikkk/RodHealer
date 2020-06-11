@@ -7,7 +7,7 @@ using TShockAPI;
 
 namespace RODhealer
 {
-    [ApiVersion(1, 23)]
+    [ApiVersion(2, 1)]
     public class Rodhealer : TerrariaPlugin
     {
         public override Version Version
@@ -59,7 +59,7 @@ namespace RODhealer
                 TSPlayer player = TShock.Players[e.Msg.whoAmI];
                 if (player != null)
                 {
-                    if (player.Group.HasPermission("rodhealer.ignoredamage"))
+                    if (player.Group.HasPermission("rod.healer"))
                     {
                         List<int> buffs = new List<int>(player.TPlayer.buffType);
                         if (buffs.Contains(88))
