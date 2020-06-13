@@ -4,6 +4,7 @@ using TerrariaApi.Server;
 using System.Reflection;
 using System.Collections.Generic;
 using TShockAPI;
+using Terraria.ID;
 
 namespace RODhealer
 {
@@ -62,7 +63,7 @@ namespace RODhealer
                     if (player.Group.HasPermission("rod.healer"))
                     {
                         List<int> buffs = new List<int>(player.TPlayer.buffType);
-                        if (buffs.Contains(88))
+                        if (buffs.Contains(BuffID.ChaosState))
                         {
                             player.Heal(player.TPlayer.statLifeMax2 / 7);
                         }
