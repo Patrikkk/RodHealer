@@ -18,4 +18,4 @@ Enjoy spamming RoD without consequence!
 `rod.healer`
 
 ## How to Use
-Just spam RoD lol you won't lose HP anymore.
+Just spam RoD lol you won't lose HP anymore. (except in PvP)
