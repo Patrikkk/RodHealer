@@ -57,16 +57,12 @@ namespace RODhealer
             if (e.MsgID == PacketTypes.Teleport)
             {
                 TSPlayer player = TShock.Players[e.Msg.whoAmI];
-                if (player != null)
+                List<int> buffs = new List<int>(player.TPlayer.buffType);
+                bool PvP = player.TPlayer.hostile;
+
+                if ((player != null) && (player.Group.HasPermission("rod.healer")) && (player.SelectedItem.netID == 1326) && (buffs.Contains(88)) && !PvP)
                 {
-                    if (player.Group.HasPermission("rod.healer"))
-                    {
-                        List<int> buffs = new List<int>(player.TPlayer.buffType);
-                        if (buffs.Contains(88))
-                        {
-                            player.Heal(player.TPlayer.statLifeMax2 / 7);
-                        }
-                    }
+                    player.Heal(player.TPlayer.statLifeMax2 / 7);
                 }
             }
         }
